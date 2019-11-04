@@ -8,7 +8,17 @@ class App extends Component {
      title : ' Movie Search App',
      searchTerm : '',
     };
+    this.searchTermChanged = this.searchTermChanged.bind(this);
   }
+  
+  searchTermChanged(event) {
+    console.log(event.target.value);
+    this.setState({
+     searchTerm : event.target.value
+    });
+
+  }
+
   render() {
     const { title , searchTerm } = this.state;
          return (
@@ -19,6 +29,7 @@ class App extends Component {
         <form >
         <label htmlFor = "searchTerm">Search </label>
           <input 
+           onChange = {this.searchTermChanged}
             value = {searchTerm}
             className = "u-full-width" 
             type = "text" 
