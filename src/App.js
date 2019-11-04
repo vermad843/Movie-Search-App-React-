@@ -13,9 +13,9 @@ class App extends Component {
     this.formSubmitted   = this.formSubmitted.bind(this);
   }
 
-
   formSubmitted(event) {
     event.preventDefault();
+    console.log('I was clicked')
     this.setState({
       loading : true
     })
