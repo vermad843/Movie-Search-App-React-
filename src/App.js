@@ -7,6 +7,7 @@ class App extends Component {
     this.state = {
      title : ' Movie Search App',
      searchTerm : '',
+     loading : false
     };
     this.searchTermChanged = this.searchTermChanged.bind(this);
     this.formSubmitted   = this.formSubmitted.bind(this);
@@ -15,6 +16,9 @@ class App extends Component {
 
   formSubmitted(event) {
     event.preventDefault();
+    this.setState({
+      loading : true
+    })
   }
 
   
@@ -26,7 +30,7 @@ class App extends Component {
   }
 
   render() {
-    const { title , searchTerm } = this.state;
+    const { title , searchTerm, loading  } = this.state;
          return (
       <div>
         <h1>
@@ -44,6 +48,7 @@ class App extends Component {
                 placeholder = "Enter a movie title.." />
             <button type = "submit">Search</button>
          </form>
+         {loading ? <img src = "Facebook-1s-200px.gif" alt = "loading..."/> : ''}
       </div>
     );
   }
