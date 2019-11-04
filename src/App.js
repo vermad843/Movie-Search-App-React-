@@ -9,10 +9,16 @@ class App extends Component {
      searchTerm : '',
     };
     this.searchTermChanged = this.searchTermChanged.bind(this);
+    this.formSubmitted   = this.formSubmitted.bind(this);
   }
+
+
+  formSubmitted(event) {
+    event.preventDefault();
+  }
+
   
   searchTermChanged(event) {
-    console.log(event.target.value);
     this.setState({
      searchTerm : event.target.value
     });
@@ -26,16 +32,16 @@ class App extends Component {
         <h1>
           {title} 
         </h1>
-        <form >
-        <label htmlFor = "searchTerm">Search </label>
-          <input 
-           onChange = {this.searchTermChanged}
-            value = {searchTerm}
-            className = "u-full-width" 
-            type = "text" 
-            id = "searchTerm" 
-            name = "searchTerm" 
-            placeholder = "Enter a movie title.." />
+        <form  onSubmit = {this.formSubmitted}>
+           <label htmlFor = "searchTerm">Search </label>
+             <input 
+               onChange = {this.searchTermChanged}
+                value = {searchTerm}
+                className = "u-full-width" 
+                type = "text" 
+                id = "searchTerm" 
+                name = "searchTerm" 
+                placeholder = "Enter a movie title.." />
             <button type = "submit">Search</button>
          </form>
       </div>
