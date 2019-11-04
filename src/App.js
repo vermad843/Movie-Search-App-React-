@@ -13,6 +13,16 @@ class App extends Component {
     this.formSubmitted   = this.formSubmitted.bind(this);
   }
 
+  componentDidMount() {
+    fetch("http://www.omdbapi.com/?i=tt3896198&apikey=41913991")
+    .then(res => {
+      return  res.json()
+    }).then(data => {
+    console.log(data);
+    })
+  }
+
+
   formSubmitted(event) {
     event.preventDefault();
     console.log('I was clicked')
