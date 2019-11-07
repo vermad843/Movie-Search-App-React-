@@ -3,8 +3,7 @@ import MovieCard from './MovieCard';
 import axios from 'axios';
 import './App.css';
 
-
-
+const API_KEY = process.env.REACT_APP_MOVIE_API_KEY
 class MoviesList extends React.Component {
     state = {
         moviesList: ['tt2294629'],
@@ -15,7 +14,7 @@ class MoviesList extends React.Component {
         event.preventDefault();
         axios
             .get(
-                `https://www.omdbapi.com/?&s=${
+                `https://www.omdbapi.com/?apikey=${API_KEY}&s=${
                     this.state.searchTerm
                 }&plot=full`
             )

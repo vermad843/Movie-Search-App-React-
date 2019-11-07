@@ -2,7 +2,8 @@ import React  from 'react';
 import axios from 'axios';
 import './App.css'
 
-console.log(process.env.REACT_APP_MOVIE_API_KEY)
+const API_KEY = process.env.REACT_APP_MOVIE_API_KEY
+
 class MovieCard extends React.Component {
   state = {
       movieData: {}
@@ -12,7 +13,7 @@ class MovieCard extends React.Component {
   componentDidMount() {
     axios
         .get(
-`https://www.omdbapi.com/?&i=${
+`https://www.omdbapi.com/?apikey=${API_KEY}&i=${
                 this.props.movieID
             }&plot=full`
         )
