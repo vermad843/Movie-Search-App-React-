@@ -1,3 +1,8 @@
+body {
+    width : 80%;
+    margin : 0 auto;
+}
+
 
 body {
     background-color: #eee;
@@ -58,7 +63,9 @@ form button:active {
     overflow: hidden;
     display: flex;
     min-height: 420px;
-    margin: 0 auto 50px;
+    margin: 0 auto 70px;
+    position : relative;
+    top : 100px;
 }
 
 .image-container {
