@@ -11,7 +11,7 @@ class MovieList extends Component {
             moviesList: ['tt2294629'],
             searchTerm: '',
             title : 'Movie Search App',
-            loading : false ,
+            loading : false,
         };
         this.handleChange = this.handleChange.bind(this);
         this.formSubmitted = this.formSubmitted.bind(this);
@@ -33,7 +33,6 @@ class MovieList extends Component {
             searchTerm : '',
             loading : false
         })
-        console.log(res)
         if (!res.Search) {
             this.setState({ moviesList: [], 
                         });
@@ -57,12 +56,12 @@ class MovieList extends Component {
         const {title, moviesList, loading } = this.state;
         return (
             <div>
-                {loading  ? <img style = {{textAlign : "center"}} src = "Facebook-1s-200px.gif" alt = "loading" /> : 
+                {loading  ? <img src = "Facebook-1s-200px.gif" alt = "loading" /> : 
                 <form onSubmit = {this.formSubmitted}>
                     <h1>{title}</h1>
                     <input 
                      onChange = {this.handleChange}
-                     placeholder = "Search for a movie"
+                     placeholder = "Search for movie ex- Iron Man"
                      className = "u-full-width"
                      type = "text" 
                      />
